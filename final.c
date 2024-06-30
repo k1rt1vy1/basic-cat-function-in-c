@@ -46,7 +46,7 @@ int main() {
 
     char content[1000];
     ssize_t bytesRead;
-    while ((bytesRead = read(fd, content, sizeof(content) - 1)) > 0) {
+    if ((bytesRead = read(fd, content, sizeof(content) - 1)) > 0) {
         content[bytesRead] = '\0';
         my_printf("%s", content);
     }
